@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: hi-res
+  namespace: devops
+spec:
+  type: git
+  params:
+    - name: url
+      value: https://codehub.devcloud.huaweicloud.com/hello00030/hello-http.git
+    - name: revision
+      value: master

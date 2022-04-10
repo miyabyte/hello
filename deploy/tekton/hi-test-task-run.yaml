@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: go-test-taskrun
+  namespace: devops
+spec:
+  taskRef:
+    name: go-test-task
+  resources:
+    inputs:
+      - name: repo #/workspace/repo
+        resourceRef:
+          name: hi-res
+

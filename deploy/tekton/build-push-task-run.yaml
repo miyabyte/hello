@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: build-push-run
+  namespace: devops
+spec:
+  serviceAccountName: dk-build-sa
+  taskRef:
+    name: build-and-push-hi
+  resources:
+    inputs:
+      - name: repo
+        resourceRef:
+          name: hi-res #代码

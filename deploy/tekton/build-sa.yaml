@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: dk-build-sa
+  namespace: devops
+secrets:
+  - name: docker-auth

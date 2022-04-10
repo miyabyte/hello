@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: pipeline-test-build-push-run-hi
+  namespace: devops
+spec:
+  serviceAccountName: dk-build-sa
+  pipelineRef:
+    name: pipeline-test-build-push-hi
+  resources:
+    - name: code-repo
+      resourceRef:
+        name: hi-res
